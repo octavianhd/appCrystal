@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+    <title>Crystal Dry Cleaners</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="custom.js"></script>
+    
+</head>
+<body>
+    <div data-role="page" id="pageone">
+        <div data-role="panel" id="myPanel1">
+            <h3>Informations</h3>
+            <p>
+                In order to have acces to our free pick-up service for clothes and laundry, you have to complete all steps of these app and press "Send the order" button from the very last page. Informations about your order will be processed by us and you will be contact about the pick-up order.
+            </p>
+            <p>
+                Thank you!
+            </p>
+            <!-- <p>Pentru a accesa serviciul nostru de preluare de la domiciliul dvs. a articolelor pe care doriti sa le curatati,
+                 trebuie sa parcurgeti toti pasii acestei aplicatii si sa apasati butonul "Finalizare comanda" de pe ultima pagina.
+                 Informatiile despre solicitarea dvs. vor ajunge la noi, va fi procesata si ve-ti fi contactati pentru a colecta 
+                 articolele la data pe care ati ales-o.</p>
+            <p>Va multumim!</p> -->
+            <a class="ui-btn ui-corner-all ui-btn-inline ui-shadow ui-icon-delete ui-btn-icon-left" data-rel="close" href=
+            "#pageone">Close</a>
+        </div>
+    	<div data-role="header"  data-fullscreen="true">
+    		<h1>Welcome!</h1>
+    	</div>
+    	<div data-role="main" class="ui-content">
+            <!-- <p>Bine ati venit la <b>Aplicatia pentru preluarea hainelor de la domiciliul dumneavoastra</b> in municipiul Oradea.
+            </p>
+            <p>Preluarea se va realiza in urma completarii de catre dvs. a datelor cerute de catre aplicatie.</p> -->
+            <p>Welcome to our <b>pick-up clothes and laundry App</b> for Crystal Clean Dry Cleaners in Oradea City.</p>
+            <a class="ui-btn ui-corner-all ui-btn-inline ui-shadow" href="#myPanel1">Click for informations</a>
+            <a href="#pagetwo" class="ui-btn ui-btn-b ui-corner-all ui-btn-inline ui-shadow " data-transition="slide">Start App</a>
+        </div>
+        <div data-role="footer" data-fullscreen="true">
+            <h3>&copy Octavian Mos-Crystal Clean</h3>
+        </div>
+    </div>
+    <div data-role="page" id="pagetwo">
+        <div data-role="header">
+            <h1>Choose an article</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <select id="prod_list">
+                <option value="0" selected>Choose an article</option>
+                <option value="Imbracaminte">Clothes</option>
+                <option value="Lenjerie">Laundry</option>
+                <option value="Perdele">Curtains</option>
+                <option value="Pilota/Patura">Blanket,Duvet</option>
+                <option value="Altele">Other</option>
+            </select>
+            <label for="prod_number">Number of pieces:</label>
+            <input type="range" id="prod_number" min="1" max="20" value="1"/>
+            <label for="booking_date">Pick-up date:</label>
+            <input type="date" id="booking_date"/>
+            <label for="booking_time">Pick-up time:</label>
+            <input type="time" value="12:00" id="booking_time"/>
+        </div>
+        <div class="button-box">
+            <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back" data-transition="slide" data-direction=
+            "reverse">Back</a>
+            <a href="#pagethree" class="ui-btn ui-btn-b ui-corner-all ui-btn-inline" data-transition="slide">Next page</a>
+        </div>
+        <div data-role="footer">
+            <h3>&copy Octavian Mos-Crystal Clean</h3>
+        </div>  
+    </div> 
+    <div data-role="page" id="pagethree">
+        <div data-role="header">
+            <h3>Informations about you.</h3>
+        </div>
+        <div data-role="main" class="ui-content">
+            <label for="name">Name:</label>
+            <input type="text" id="name"/>
+            <label for="adress">Adress:</label>
+            <input type="text" id="adress"/>
+            <label for="customer_phone">Phone:</label>
+            <input type="tel" id="customer_phone"/>
+        </div>
+    </br>
+        <div class="button-box">
+            <a class="ui-btn ui-corner-all ui-btn-inline ui-shadow" data-rel="back"  data-transition="slide" data-direction=
+            "reverse">Back</a>
+            <a id="final" data-role="button" data-inline="true"  data-theme="b" data-transition="slide">Send the order</a>
+        </div>
+        
+        <div data-role="footer">
+            <h3>&copy Octavian Mos-Crystal Clean</h3>
+        </div>
+    </div>
+    <div data-role="page" data-dialog="false" id="thankyou">
+        <div data-role="header">
+            <h3>Thank you!</h3>
+        </div>
+        <!--div id="waitmsg" data-role="ui-content">
+        <img src="ajax-loader.gif">
+        </div-->
+        <div data-role="main" class="ui-content">
+            <p><h3>Here are the details of your order:</h3></p>
+            <p>Name:<span class="name"></span></p>
+            <p>Adress:<span class="adress"></span></p>
+            <p>Phone:<span class="customer_phone"></span></p>
+            <p>Articles:<span class="prod_list"></span></p>
+            <p>Pieces:<span class="prod_number"></span></p>
+            <p>Pick-up date:<span class="booking_date"></span></p>
+            <p>Pick-up time:<span class="booking_time"></span></p>
+            <p>Your order has been registred. You will be contact to confirm the order details. Thank you!</p>
+        </div>
+        <div data-role="footer">
+            <h3>&copy Octavian Mos-Crystal Clean</h3>
+        </div>
+    </div>
+</body>
+</html>
